@@ -1,0 +1,252 @@
+scss_files: "src/**/*.scss"
+
+exclude: 'src/scss/1_vendors/**'
+
+linters:
+  BangFormat:
+    enabled: true
+    severity: warning
+    space_before_bang: true
+    space_after_bang: false
+
+  BemDepth:
+    enabled: true
+    severity: error
+    max_elements: 2
+
+  BorderZero:
+    enabled: true
+    severity: warning
+    convention: none
+
+  ChainedClasses:
+    enabled: false
+
+  ColorKeyword:
+    enabled: true
+    severity: error
+
+  ColorVariable:
+    enabled: false
+
+  Comment:
+    enabled: true
+    severity: error
+    allowed: '^[/* ] Copyright'
+
+  DebugStatement:
+    enabled: false
+
+  DeclarationOrder:
+    enabled: false
+
+  DuplicateProperty:
+    enabled: true
+    severity: error
+    ignore_consecutive: true
+
+  ElsePlacement:
+    enabled: true
+    severity: error
+    style: same_line
+
+  EmptyLineBetweenBlocks:
+    enabled: true
+    severity: error
+    ignore_single_line_blocks: true
+
+  EmptyRule:
+    enabled: true
+    severity: warning
+
+  ExtendDirective:
+    enabled: false
+
+  FinalNewLine:
+    enabled: true
+    severity: warning
+    present: true
+
+  HexLength:
+    enabled: true
+    severity: error
+    style: short
+
+  HexNotation:
+    enabled: false
+
+  HexValidation:
+    enabled: true
+    severity: error
+
+  IdSelector:
+    enabled: true
+    severity: error
+
+  ImportantRule:
+    enabled: true
+    severity: error
+
+  ImportPath:
+    enabled: true
+    severity: error
+    leading_underscore: false
+    filename_extension: false
+
+  Indentation:
+    enabled: true
+    severity: error
+    character: space
+    width: 2
+
+  LeadingZero:
+    enabled: true
+    severity: error
+    style: exclude_zero
+
+  LengthVariable:
+    enabled: false
+
+  MergeableSelector:
+    enabled: false
+
+  NameFormat:
+    enabled: true
+    severity: error
+    convention: hyphenated_lowercase
+    allow_leading_underscore: false
+
+  NestingDepth:
+    enabled: true
+    severity: error
+    max_depth: 3
+
+  PlaceholderInExtend:
+    enabled: false
+
+  PrivateNamingConvention:
+    enabled: false
+
+  PropertyCount:
+    enabled: false
+
+  PropertySortOrder:
+    enabled: false
+
+  PropertySpelling:
+    enabled: true
+    severity: error
+
+  PropertyUnits:
+    enabled: false
+
+  PseudoElement:
+    enabled: true
+    severity: error
+
+  QualifyingElement:
+    enabled: true
+    severity: error
+
+  SelectorDepth:
+    enabled: false
+
+  SelectorFormat:
+    enabled: true
+    severity: warning
+    convention: hyphenated_BEM
+
+  Shorthand:
+    enabled: false
+
+  SingleLinePerProperty:
+    enabled: true
+    severity: error
+
+  SingleLinePerSelector:
+    enabled: false
+
+  SpaceAfterComma:
+    enabled: true
+    severity: error
+    style: one_space
+
+  SpaceAfterPropertyColon:
+    enabled: true
+    severity: error
+    style: one_space
+
+  SpaceAfterPropertyName:
+    enabled: true
+    severity: error
+
+  SpaceAfterVariableColon:
+    enabled: true
+    severity: error
+    style: one_space
+
+  SpaceAfterVariableName:
+    enabled: true
+    severity: error
+
+  SpaceAroundOperator:
+    enabled: false
+
+  SpaceBeforeBrace:
+    enabled: true
+    severity: error
+    style: space
+
+  SpaceBetweenParens:
+    enabled: true
+    severity: error
+    spaces: 0
+
+  StringQuotes:
+    enabled: true
+    severity: error
+    style: single_quotes
+
+  TrailingSemicolon:
+    enabled: true
+    severity: warning
+
+  TrailingWhitespace:
+    enabled: true
+    severity: warning
+
+  TrailingZero:
+    enabled: true
+    severity: error
+
+  TransitionAll:
+    enabled: false
+
+  UnnecessaryMantissa:
+    enabled: true
+    severity: error
+
+  UnnecessaryParentReference:
+    enabled: true
+    severity: error
+
+  UrlFormat:
+    enabled: false
+
+  UrlQuotes:
+    enabled: true
+    severity: error
+
+  VariablesForProperty:
+    enabled: true
+    properties:
+      - font
+
+  VendorPrefixes:
+    enabled: true
+    severity: error
+    identifier_list: bourbon
+
+  ZeroUnit:
+    enabled: true
+    severity: error

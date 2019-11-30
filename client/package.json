@@ -1,0 +1,73 @@
+{
+  "name": "thrones-ipsum_client",
+  "version": "0.1.0",
+  "description": "React-based client for Thrones-Ipsum",
+  "license": "MIT",
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/crenexi/thrones-ipsum"
+  },
+  "author": {
+    "name" : "James Walrath",
+    "email" : "james@crenexi.com",
+    "url" : "https://github.com/crenexi"
+  },
+  "scripts": {
+    "start": "webpack-dev-server --config webpack.config.js --mode development --hot",
+    "lint": "./node_modules/.bin/eslint --ext js,jsx src",
+    "lint:fix": "./node_modules/.bin/eslint --fix --ext js,jsx src",
+    "build": "webpack --config webpack.config.js --mode development",
+    "build:prod": "gulp clean:all && webpack --config webpack.config.js --mode production",
+    "publish:prod": "gulp publish:prod",
+    "deploy:prod": "npm run lint && npm run build:prod && npm run publish:prod"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.24",
+    "@fortawesome/pro-light-svg-icons": "^5.11.1",
+    "@fortawesome/react-fontawesome": "^0.1.4",
+    "@material-ui/core": "^4.4.3",
+    "@material-ui/styles": "^4.4.3",
+    "babel-plugin-react-css-modules": "^5.2.6",
+    "classnames": "^2.2.6",
+    "prop-types": "^15.7.2",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "react-helmet": "^5.2.1",
+    "react-router-dom": "^5.1.0",
+    "react-scripts": "^3.1.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.5.5",
+    "@babel/core": "^7.5.5",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@babel/plugin-proposal-object-rest-spread": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/preset-react": "^7.0.0",
+    "aws-sdk": "^2.533.0",
+    "babel-loader": "^8.0.6",
+    "copy-webpack-plugin": "^5.0.4",
+    "css-loader": "^2.1.1",
+    "del": "^5.1.0",
+    "eslint": "^6.1.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-import-resolver-webpack": "^0.11.1",
+    "eslint-loader": "^3.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.14.3",
+    "eslint-plugin-react-hooks": "^1.7.0",
+    "gulp": "^4.0.2",
+    "gulp-awspublish": "^4.0.0",
+    "gulp-hub": "^4.2.0",
+    "html-webpack-plugin": "3.0.7",
+    "node-sass": "^4.12.0",
+    "postcss-nested": "^4.1.2",
+    "postcss-scss": "^2.0.0",
+    "sass": "^1.22.10",
+    "sass-loader": "^8.0.0",
+    "style-loader": "^1.0.0",
+    "webpack": "^4.39.3",
+    "webpack-cli": "^3.3.7",
+    "webpack-dev-server": "^3.8.0"
+  }
+}
