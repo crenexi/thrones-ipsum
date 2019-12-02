@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const bourbon = require('node-bourbon').includePaths;
 
 // const APP_PATH = path.resolve(__dirname, '/src/app');
 const DIST_PATH = path.join(__dirname, '/dist');
@@ -32,6 +33,9 @@ const scssLoaderRule = () => ({
     },
     {
       loader: 'sass-loader',
+      options: {
+        includePaths: [bourbon],
+      },
     },
   ],
 });
