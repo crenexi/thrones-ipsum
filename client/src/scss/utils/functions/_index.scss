@@ -1,0 +1,41 @@
+@import 'variable';
+
+// Get breakpoint
+@function breakpoint($key) {
+  @return variable('breakpoint', $breakpoints, $key);
+}
+
+// Get spacing
+@function spacing($key) {
+  @return variable('spacing', $spacing, $key);
+}
+
+// Get layout
+@function layout($key) {
+  @return variable('layout', $layout, $key);
+}
+
+// Get z-index
+@function z-index($key) {
+  @return variable('z-index', $z-indices, $key);
+}
+
+// Get font-family
+@function font-family($key) {
+  @return variable('font-family', $font-families, $key);
+}
+
+// Get color
+@function color($key, $subkey: '') {
+  @return variable('color', $colors, $key, $subkey);
+}
+
+// Get shadow
+@function shadow($key) {
+  @return variable('shadow', $shadows, $key);
+}
+
+// Get border-radius
+@function border-radius($key) {
+  @return variable('border-radius', $border-radii, $key);
+}

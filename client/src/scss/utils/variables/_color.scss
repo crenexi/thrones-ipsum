@@ -1,0 +1,59 @@
+// Helper to return map for theme color
+@function themeMap($color) {
+  @return (
+    base: $color,
+    light: lighten(7%, $color),
+    dark: darken(7%, $color),
+  );
+}
+
+// General colors
+$color-light: #ebeaec;
+$color-border: #d8d6d9;
+$color-body: #241f29;
+$color-body-easy: #625d6a;
+$color-body-subtle: #b1aeb4;
+
+// Link colors
+$color-link: #994b4c;
+$color-link-hover: #663233;
+
+// Utility colors
+$color-success: #29CC5A;
+$color-info: #469EBF;
+$color-warning: #F2AD3B;
+$color-danger: #FF5033;
+
+// Color theme base
+$color-night: #04082D;
+$color-winter: #3C3545;
+$color-spring: #B7C1B6;
+$color-summer: #E5B68C;
+$color-fall: #AA5455;
+
+// Combined color map
+// Note: in the exports, submap keys named "base" will
+// default to being named with just the key name
+$colors: (
+  light: $color-light,
+  border: $color-border,
+  body: (
+    base: $color-body,
+    easy: $color-body-easy,
+    subtle: $color-body-subtle,
+  ),
+  link: (
+    base: $color-link,
+    hover: $color-link-hover,
+  ),
+  utility: (
+    success: $color-success,
+    info: $color-info,
+    warning: $color-warning,
+    danger: $color-danger,
+  ),
+  night: themeMap($color-night),
+  winter: themeMap($color-winter),
+  spring: themeMap($color-spring),
+  fall: themeMap($color-fall),
+);

@@ -1,0 +1,73 @@
+@import './variables/module';
+
+// Utility to capitalize string
+@function capitalize($str) {
+  @return to-upper-case(str-slice($str, 1, 1)) + str-slice($str, 2);
+}
+
+// Utility to add group name to key
+@function prepend-key($pre, $key) {
+  @return $pre + capitalize(($key));
+}
+
+// Utility to add group name to subkey
+@function prepend-sub-key($pre, $key, $subkey) {
+  @if $subkey == 'base' {
+    @return prepend-key($pre, $key);
+  } @else {
+    @return prepend-key($pre, $key) + capitalize($subkey);
+  }
+}
+
+// Utility to check if variable is a map
+@function is-map($var){
+  @return type-of($var) == 'map';
+}
+
+:export {
+  // Export breakpoints
+  @each $key, $value in $breakpoints {
+    #{prepend-key('breakpoint', $key)}: $value;
+  }
+
+  // Export spacing
+  @each $key, $value in $spacing {
+    #{prepend-key('spacing', $key)}: $value;
+  }
+
+  // Export layout
+  @each $key, $value in $layout {
+    #{prepend-key('layout', $key)}: $value;
+  }
+
+  // Export z-indices
+  @each $key, $value in $zIndices {
+    #{prepend-key('zIndex', $key)}: $value;
+  }
+
+  // Export font-familiers
+  @each $key, $value in $fontFamilies {
+    #{prepend-key('fontFamily', $key)}: $value;
+  }
+
+  // Export colors
+  @each $key, $value in $colors {
+    @if is-map($v) {
+      @each $subkey, $sub-v in $value {
+        #{prepend-sub-key('color', $key, $subkey)}: $sub-v;
+      }
+    } @else {
+      #{prepend-key('color', $key)}: $value;
+    }
+  }
+
+  // Export shadow
+  @each $key, $value in $shadows {
+    #{prepend-key('shadow', $key)}: $value;
+  }
+
+  // Export border-radii
+  @each $key, $value in $borderRadii {
+    #{prepend-key('borderRadius', $key)}: $value;
+  }
+}

@@ -1,0 +1,31 @@
+// Breakpoints mins and maxes
+$bp-xs-max: (breakpoint(sm) - 1) * 1px;
+$bp-sm-min: (breakpoint(sm)) * 1px;
+$bp-sm-max: (breakpoint(md) - 1) * 1px;
+$bp-md-min: breakpoint(md) * 1px;
+$bp-md-max: (breakpoint(lg) - 1) * 1px;
+$bp-lg-min: breakpoint(lg) * 1px;
+$bp-lg-max: (breakpoint(xl) - 1) * 1px;
+$bp-xl-min: breakpoint(xl) * 1px;
+
+@mixin breakpoint($key) {
+  @if $key == 'xs' {
+    @media (max-width: $bp-xs-max) { @content; }
+  } @else if $key == 'gt-xs' {
+    @media (min-width: $bp-sm-min) { @content; }
+  } @else if $key == 'sm' {
+    @media (min-width: $bp-sm-min) and (max-width: $bp-sm-max) { @content; }
+  } @else if $key == 'gt-sm' {
+    @media (min-width: $bp-md-min) { @content; }
+  } @else if $key == 'md' {
+    @media (min-width: $bp-md-min) and (max-width: $bp-md-max) { @content; }
+  } @else if $key == 'gt-md' {
+    @media (min-width: $bp-lg-min) { @content; }
+  } @else if $key == 'lg' {
+    @media (min-width: $bp-lg-min) and (max-width: $bp-lg-max) { @content; }
+  } @else if $key == 'gt-lg' {
+    @media (min-width: $bp-xl-min) { @content; }
+  } @else if $key == 'xl' {
+    @media (min-width: $bp-xl-min) { @content; }
+  }
+}

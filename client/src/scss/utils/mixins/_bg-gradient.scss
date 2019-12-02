@@ -1,0 +1,9 @@
+@mixin bg-gradient($color1, $color2, $color3: '') {
+  @if $color3 == '' {
+    background: $color1;
+    background: linear-gradient(.45turn, $color1, $color2);
+  } @else {
+    background: $color2;
+    background: linear-gradient(.45turn, $color1, $color2, $color3);
+  }
+}
