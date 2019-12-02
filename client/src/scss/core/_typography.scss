@@ -1,0 +1,85 @@
+$base-font-size: 16px;
+$base-line-height: 1.5em;
+
+// Root typography
+
+body {
+  font-family: font-family(base);
+  font-size: $base-font-size * .9;
+  line-height: $base-line-height * 1.15;
+  color: color(body);
+
+  @include breakpoint('gt-sm') {
+    font-size: $base-font-size;
+    line-height: $base-line-height;
+  }
+
+  @include breakpoint('gt-lg') {
+    font-size: $base-font-size * 1.1;
+  }
+
+  @include breakpoint('gt-xl') {
+    font-size: $base-font-size * 1.2;
+  }
+}
+
+// Link typography
+
+a {
+  text-decoration: none;
+  color: color(link);
+  transition-duration: 50ms;
+
+  &:hover, &:focus, &:active {
+    color: color(link, hover);
+  }
+}
+
+// Heading typography
+
+@mixin set-heading-type($font-size, $line-height, $letter-spacing) {
+  font-size: $font-size;
+  line-height: $line-height;
+  letter-spacing: $letter-spacing;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: font-family(body);
+}
+
+h1, h2 {
+  font-weight: 300;
+}
+
+h5, h6 {
+  font-weight: 500;
+}
+
+h6 {
+  text-transform: uppercase;
+}
+
+h1 { @include set-heading-type(5rem, 1, -1.6px); }
+h2 { @include set-heading-type(3.3rem, 1.1, -.8px); }
+h3 { @include set-heading-type(2.6rem, 1.2, 0); }
+h4 { @include set-heading-type(2rem, 1.3, .3px); }
+h5 { @include set-heading-type(1.5rem, 1.4, 1px); }
+h6 { @include set-heading-type(1.1rem, 1.5, 1.7px); }
+
+// Bold and caption (and ban italics)
+
+b, strong, i, em {
+  font-style: normal;
+  font-weight: 500;
+}
+
+caption, small {
+  text-transform: uppercase;
+  font-size: .85rem;
+}
+
+// Paragraph
+
+p {
+  font-family: font-family(primary);
+}

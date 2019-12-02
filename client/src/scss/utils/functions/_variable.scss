@@ -1,0 +1,22 @@
+@function variable($type, $map, $key, $subkey: '') {
+  @if $subkey == '' {
+    @if map-has-key($map, $key) {
+      @return map-get($map, $key);
+    }
+
+    @warn 'Unknown key `#{$key}` in #{$type} map.';
+    @return null;
+  } @else {
+    @if map-has-key($map, $key) {
+      @if map-has-key(map-get($map, $key), $subkey) {
+        @return map-get(map-get($map, $key), $subkey);
+      }
+
+      @warn 'Unknown subkey `#{$subkey}` in #{$type} map`';
+      @return null;
+    }
+
+    @warn 'Unknown key `#{$key}` in #{$type} map.';
+    @return null;
+  }
+}

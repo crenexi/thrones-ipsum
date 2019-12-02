@@ -1,0 +1,7 @@
+$font-family-body: '"Roboto", "Arial", sans-serif';
+$font-family-primary: '"Average", Garamond ", serif';
+
+$font-families: (
+  base: unquote($font-family-body)
+  primary: unquote($font-family-primary),
+);
