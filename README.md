@@ -5,10 +5,7 @@ This project is a fun, interactive ipsum generator with a *Game of Thrones* twis
 
 ## Installation
 
-```
-npm install
-npm start
-```
+This is an umbrella directory for **server** and **client** apps.
 
 ## Contributing
 

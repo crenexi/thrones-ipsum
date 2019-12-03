@@ -1,11 +1,11 @@
 {
   "name": "thrones-ipsum_client",
   "version": "0.1.0",
-  "description": "React-based client for Thrones-Ipsum",
+  "description": "Client for Thrones-Ipsum",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/crenexi/thrones-ipsum"
+    "url": "https://github.com/crenexi/thrones-ipsum/tree/master/client"
   },
   "author": {
     "name": "James Walrath",
